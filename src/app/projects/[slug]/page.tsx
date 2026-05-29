@@ -68,7 +68,7 @@ export default async function ProjectPage({
                     ) => (
                       <span
                         key={`${tech}-${index}`}
-                        className="rounded-full bg-gray-100 px-4 py-2"
+                        className="rounded-full bg-gray-100 px-4 py-2 hover"
                       >
                         {tech}
                       </span>

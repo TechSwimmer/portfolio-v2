@@ -44,7 +44,7 @@ export default function MediaContentSection({ title, items }: MediaContentSectio
                                         key={i}
                                         className="text-gray-600"
                                     >
-                                        • {bullet}
+                                        {bullet}
                                     </li>
                                 ))}
                             </ul>

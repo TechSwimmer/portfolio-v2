@@ -17,7 +17,7 @@ export default function BulletListSection({title,items}: BulletListSectionProps)
                         key={`${item}-${index}`}
                         className="text-lg leading-relaxed text-gray-600"
                     >
-                        •{item}
+                        • {item}
                     </li>
                 ))}
             </ul>

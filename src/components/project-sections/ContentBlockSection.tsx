@@ -18,7 +18,7 @@ export default function ContentBlockSection({ title , items}:ContentBlockSection
                 {items.map((item) => (
                     <div 
                         key={item.subtitle}
-                        className="rounded-3xl border border-gray-200 bg-white p-8"
+                        className="rounded-3xl border border-gray-300 bg-white p-8"
                     >
                         <h3 className="mb-3 text-xl font-semibold">
                             {item.subtitle}
