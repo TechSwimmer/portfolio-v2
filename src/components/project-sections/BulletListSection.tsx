@@ -7,7 +7,7 @@ export default function BulletListSection({title,items}: BulletListSectionProps)
 
     return (
         <section className="mt-20">
-            <h2 className="mb-8 text-3xl font-bold">
+            <h2 className="mb-8 text-3xl font-bold dark:text-zinc-100">
                 {title}
             </h2>
 
@@ -15,7 +15,7 @@ export default function BulletListSection({title,items}: BulletListSectionProps)
                 {items.map((item,index) => (
                     <li
                         key={`${item}-${index}`}
-                        className="text-lg leading-relaxed text-gray-600"
+                        className="text-lg leading-relaxed text-gray-600 dark:text-zinc-300"
                     >
                         • {item}
                     </li>

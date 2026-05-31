@@ -14,7 +14,7 @@ export default function MediaContentSection({ title, items }: MediaContentSectio
 
     return (
         <section className="mt-20">
-            <h2 className="mb-8 text-3xl font-bold">
+            <h2 className="mb-8 text-3xl font-bold dark:text-zinc-100">
                 {title}
             </h2>
 
@@ -22,17 +22,17 @@ export default function MediaContentSection({ title, items }: MediaContentSectio
                 {items.map((item, index) => (
                     <div
                         key={index}
-                        className="rounded-3xl border border-gray-200 p-8"
+                        className="rounded-3xl border border-gray-200 p-8 shadow-sm transition-colors dark:border-zinc-800 dark:border-zinc-800 dark:bg-zinc-900/70"
                     >
 
                         {item.subtitle && (
-                            <h3 className="mb-4 text-2xl font=-semibold">
+                            <h3 className="mb-4 text-2xl font-semibold dark:text-zinc-100">
                                 {item.subtitle}
                             </h3>
                         )}
 
                         {item.description && (
-                            <p className="mb-5 leading-relaxed text-gray-600">
+                            <p className="mb-5 leading-relaxed text-gray-600 dark:text-zinc-300">
                                 {item.description}
                             </p>
                         )}
@@ -42,7 +42,7 @@ export default function MediaContentSection({ title, items }: MediaContentSectio
                                 {item.bullets.map((bullet, i) => (
                                     <li
                                         key={i}
-                                        className="text-gray-600"
+                                        className="text-gray-600 dark:text-zinc-300"
                                     >
                                         {bullet}
                                     </li>

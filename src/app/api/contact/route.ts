@@ -9,7 +9,7 @@ const resend = new Resend(
 export async function POST(
     request: Request
 ) {
-    try{
+    try {
         const body = await request.json()
 
         const {
@@ -21,45 +21,140 @@ export async function POST(
                 {
                     message: "All fields are required",
                 },
-                {status:400}
+                { status: 400 }
             );
         }
 
         // send email
         await resend.emails.send({
-            from: "Portfolio Contact <onboarding@resend.dev>",
-            to: process.env.CONTACT_EMAIL!,
-            subject: `Portfolio contact from ${name}`,
+            from:
+                "Portfolio Contact <onboarding@resend.dev>",
+
+            to:
+                process.env
+                    .CONTACT_EMAIL!,
+
+            replyTo: email,
+
+            subject:
+                `New Portfolio Message from ${name}`,
+
             html: `
-                <h2>New Portfolio Contact</h2>
-                <p>
-                    <strong>Name:</strong>
-                    ${name}
-                </p>
-                <p>
-                    <strong>Email:</strong>
-                    ${email}
-                </p>
-                <p>
-                    <strong>Message:</strong>
-                </p>
-                <p>
-                    ${message}
-                </p>
-                `,
+    <div
+      style="
+        font-family:
+        Arial,
+        sans-serif;
+
+        max-width:
+        600px;
+
+        margin:
+        auto;
+
+        padding:
+        24px;
+
+        border:
+        1px solid #e5e7eb;
+
+        border-radius:
+        16px;
+      "
+    >
+      <h1
+        style="
+          margin-bottom:
+          20px;
+        "
+      >
+        📩 New Portfolio Contact
+      </h1>
+
+      <div
+        style="
+          margin-bottom:
+          16px;
+        "
+      >
+        <strong>
+          Name:
+        </strong>
+
+        <p>
+          ${name}
+        </p>
+      </div>
+
+      <div
+        style="
+          margin-bottom:
+          16px;
+        "
+      >
+        <strong>
+          Email:
+        </strong>
+
+        <p>
+          ${email}
+        </p>
+      </div>
+
+      <div
+        style="
+          margin-bottom:
+          16px;
+        "
+      >
+        <strong>
+          Message:
+        </strong>
+
+        <p
+          style="
+            line-height:
+            1.7;
+          "
+        >
+          ${message}
+        </p>
+      </div>
+
+      <hr
+        style="
+          margin:
+          24px 0;
+        "
+      />
+
+      <p
+        style="
+          color:
+          #6b7280;
+
+          font-size:
+          14px;
+        "
+      >
+        Sent on:
+        ${new Date().toLocaleString()}
+      </p>
+    </div>
+  `,
         });
 
         return NextResponse.json({
             message: "Message sent successfully!",
         })
     }
-    catch(err){
+    catch (err) {
         console.error(err);
         return NextResponse.json(
             {
                 message: "Something went wrong",
             },
-            {status:500}
+            { status: 500 }
         );
     }
 }

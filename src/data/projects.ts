@@ -9,6 +9,7 @@ type BulletListSections = {
 type ContentBlockSection = {
     type: "contentBlock";
     title: string;
+    image?:string;
     items: {
         subtitle: string;
         description: string;
@@ -46,6 +47,7 @@ export interface Project {
     video?: string;
     image?: string;
     sections?: Section[];
+    poster?:string
 
 };
 
@@ -54,6 +56,7 @@ export const projects: Project[] = [
         title: "ResumeBaker",
         slug: "resumebaker",
         description: "Built a production-ready full-stack resume builder with real-time preview synchronization, dynamic layouts, JWT authentication, AI-powered resume import, and consistent PDF export. Implemented REST APIs for resume persistence and seamless guest/registered user workflows.",
+        poster: "/images/resumebaker/builder-shot.png",
         techStack: [
             {
                 subtitle: "Frontend:",
@@ -73,8 +76,10 @@ export const projects: Project[] = [
         video: "/videos/builder-demo.mp4",
         sections: [
             {
+
                 type: "contentBlock",
                 title: "Project highlights",
+                image: "/images/resumebaker/builder-shot.png",
                 items: [
                     {
                         subtitle: "Full-Stack Resume Builder",
@@ -189,6 +194,7 @@ export const projects: Project[] = [
         title: "TaskNest",
         slug: "tasknest",
         description: "Built a full-stack task management SPA with secure JWT authentication, CRUD functionality, calendar-based task filtering, and MongoDB persistence. Implemented RESTful APIs, token-based access control, and a responsive productivity-focused user experience.",
+        poster:"/images/tasknest/tasknest.png",
         techStack: [
             {
                 subtitle: "Frontend:",
@@ -482,8 +488,8 @@ export const projects: Project[] = [
                 technologies: ["Git", "Github"]
             }
         ],
-        github: "https://github.com/TechSwimmer/Affina",
+        github: "https://github.com/TechSwimmer/portfolio-v2",
         live: "https://affina.netlify.app",
-        image: "/videos/portfolio.png",
+        image: "/images/portfolio/portfolio-shot.png",
     }
 ]

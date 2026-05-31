@@ -30,8 +30,36 @@ export default function ProjectCard({
     image,
 }: ProjectCardProps) {
     return (
-        <div className="flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-            <div className="mb-6 overflow-hidden rounded-2xl border border-gray-200">
+        <div className="
+group
+flex
+h-full
+flex-col
+rounded-[2rem]
+border
+border-gray-200
+bg-white
+p-8
+shadow-sm
+transition-all
+duration-300
+
+hover:-translate-y-2
+hover:shadow-xl
+
+dark:border-zinc-800
+dark:bg-zinc-900/80
+dark:hover:border-zinc-700
+">
+            <div className="mb-6
+overflow-hidden
+rounded-[1.5rem]
+border
+border-gray-200
+bg-zinc-100
+
+dark:border-zinc-800
+dark:bg-zinc-950">
                 {video ? (
                     <video
                         src={video}
@@ -39,7 +67,7 @@ export default function ProjectCard({
                         muted
                         loop
                         playsInline
-                        className="h-[220px] w-full object-cover transition duration-500 hover:scale-[1.02]"
+                        className="h-[220px] w-full object-cover transition duration-500 group-hover:scale-[1.04]"
                     />
                 ) : image ? (
                     <img
@@ -52,13 +80,16 @@ export default function ProjectCard({
                 )}
             </div>
 
-            <h3 className="mb-4 text-3xl font-semibold">
+            <h3 className="text-3xl
+font-semibold
+tracking-tight
+dark:text-zinc-100">
                 {title}
             </h3>
 
 
 
-            <p className="mb-6 text-gray-600 leading-relaxed text-[18px]">
+            <p className="mb-6 text-gray-600 leading-relaxed text-[18px] dark:text-zinc-300">
                 {description}
             </p>
 
@@ -70,10 +101,22 @@ export default function ProjectCard({
                             category.technologies
                     )
                     .slice(0, 6)
-                    .map((tech,index) => (
+                    .map((tech, index) => (
                         <span
                             key={`${tech}-${index}`}
-                            className="rounded-full border border-gray-200 bg-gray-100 px-3 py-1 text-sm text-gray-700"
+                            className="rounded-full
+border
+border-gray-200
+bg-gray-100
+px-3
+py-1.5
+text-sm
+text-gray-700
+transition-colors
+
+dark:border-zinc-700
+dark:bg-zinc-800
+dark:text-zinc-200"
                         >
                             {tech}
                         </span>
@@ -81,8 +124,8 @@ export default function ProjectCard({
             </div>
 
             {/* Buttons */}
-            <div className="mt-auto flex items-center justify-between gap-4 border-t border-gray-100 pt-5">
-                <div className="flex gap-2">
+            <div className="mt-auto flex items-center justify-between gap-4 border-t border-gray-100 dark:border-zinc-800 pt-5">
+                <div className="flex gap-3">
                     <PrimaryButton
                         text="Live"
                         href={live}

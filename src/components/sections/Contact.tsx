@@ -20,6 +20,12 @@ export default function Contact() {
 
     const [loading, setLoading] = useState(false)
 
+    const [status, setStatus] =
+        useState<{
+            type: 'success' | "error";
+            message: string;
+        } | null>(null)
+
     const handleChange = (
         e: React.ChangeEvent<
             HTMLInputElement | HTMLTextAreaElement
@@ -38,6 +44,47 @@ export default function Contact() {
 
         try {
             setLoading(true);
+            // validation
+
+            if (
+                !formData.name ||
+                !formData.email ||
+                !formData.message
+            ) {
+                setStatus({
+                    type: "error",
+                    message: "Please fill all fields",
+                });
+
+                return;
+            }
+            // email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (
+                !emailRegex.test(
+                    formData.email
+                )
+            ) {
+                setStatus({
+                    type: "error",
+                    message: "Please enter a valid email."
+                });
+
+                return;
+            }
+            // message length
+            if (
+                formData.message.length <
+                10
+            ) {
+                setStatus({
+                    type: "error",
+                    message:
+                        "Message must be at least 10 characters",
+                });
+
+                return;
+            }
 
             const response =
                 await fetch(
@@ -55,7 +102,12 @@ export default function Contact() {
 
             const data = await response.json();
 
-            alert(data.message);
+            setStatus({
+                type: response.ok
+                    ? "success" : "error",
+
+                message: data.message,
+            })
 
             // reset form
             setFormData({
@@ -66,7 +118,10 @@ export default function Contact() {
         }
         catch (err) {
             console.error(err)
-            alert("Something went wrong");
+            setStatus({
+                type: "error",
+                message: "Something went wrong",
+            });
         }
         finally {
             setLoading(false)
@@ -76,7 +131,7 @@ export default function Contact() {
 
 
     return (
-        <section className="max-w-4xl mx-auto px-6 py-24">
+        <section className="max-w-4xl mx-auto px-6 py-24" id="contact">
             <SectionHeading
                 eyebrow="Contact"
                 title="let's work together"
@@ -113,6 +168,17 @@ export default function Contact() {
                     onChange={handleChange}
                     className="w-full rounded-2xl border border-gray-200 p-4 outline-none"
                 />
+                {status && (
+                    <div
+                        className={`rounded-xl p-4 text-sm ${status.type ===
+                            "success"
+                            ? "bg-green-100 text-green-700"
+                            : "bg-red-100 text-red-700"
+                            }`}
+                    >
+                        {status.message}
+                    </div>
+                )}
                 <PrimaryButton
                     text={
                         loading

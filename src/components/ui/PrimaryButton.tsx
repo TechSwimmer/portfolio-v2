@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+
 type PrimaryButtonProps = {
   text: string;
 
@@ -23,21 +24,52 @@ export default function PrimaryButton({
   disabled = false,
 }: PrimaryButtonProps) {
   const styles =
-    variant === "primary"
-      ? "bg-black text-white hover:opacity-90"
-      : "border border-gray-300 bg-white text-black hover:bg-gray-100";
+  variant ===
+  "primary"
+    ? `
+      bg-zinc-950
+      text-white
+      shadow-sm
+      hover:-translate-y-[2px]
+      hover:shadow-lg
+      dark:bg-zinc-100
+      dark:text-zinc-900
+    `
+    : `
+      border
+      border-gray-200
+      bg-white
+      text-zinc-800
+      shadow-sm
 
-  const sharedClasses = `
-    inline-flex
-    items-center
-    justify-center
-    rounded-xl
-    px-6
-    py-3
-    transition
-    disabled:opacity-50
-    ${styles}
-  `;
+      hover:-translate-y-[2px]
+      hover:bg-gray-50
+      hover:shadow-md
+
+      dark:border-zinc-700
+      dark:bg-zinc-900
+      dark:text-zinc-200
+      dark:hover:bg-zinc-800
+      dark:hover:shadow-zinc-950/40
+    `;
+
+ const sharedClasses = `
+  inline-flex
+  items-center
+  justify-center
+  rounded-2xl
+  px-5
+  py-3
+  font-medium
+  transition-all
+  duration-300
+  disabled:opacity-50
+  disabled:cursor-not-allowed
+
+  hover:-translate-y-[2px]
+
+  ${styles}
+`;  
 
   // External links
   if (href && external) {

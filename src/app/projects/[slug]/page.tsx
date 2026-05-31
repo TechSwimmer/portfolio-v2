@@ -6,7 +6,7 @@ import MediaContentSection from "@/components/project-sections/MediaContentSecti
 
 type ProjectPageProps = {
   params: Promise<{
-    slug: string;
+    slug: string; 
   }>;
 };
 
@@ -31,18 +31,60 @@ export default async function ProjectPage({
     <section className="max-w-5xl mx-auto px-6 py-28">
       {/* Hero Section */}
       <div className="mb-20">
-        <h1 className="mb-6 text-5xl font-bold">
+        <h1 className="mb-6 text-5xl font-bold dark:text-zinc-100">
           {project.title}
         </h1>
 
-        <p className="max-w-3xl text-lg leading-relaxed text-gray-600">
+        <p className="max-w-3xl text-lg leading-relaxed text-gray-600 dark:text-zinc-300">
           {project.description}
         </p>
       </div>
+      {/* Hero Media */}
+      {(project.video || project.image) && (
+        <div
+          className="
+      mb-20
+      overflow-hidden
+      rounded-[2rem]
+      border
+      border-zinc-200
+      shadow-sm
 
+      dark:border-zinc-800
+      dark:bg-zinc-900/70
+    "
+        >
+          {project.video ? (
+            <video
+              src={project.video}
+              poster={project.poster}
+              preload="metadata"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="
+          w-full
+          object-cover
+        "
+            />
+          ) : (
+            <img
+              src={project.image}
+              alt={`${project.title} preview`}
+              className="
+          h-[450px]
+          w-full
+          object-cover
+        "
+            />
+          )}
+        </div>
+      )}
       {/* Tech Stack */}
       <div className="mb-20">
-        <h2 className="mb-8 text-3xl font-bold">
+        <h2 className="mb-8 text-3xl font-bold dark:text-zinc-100">
           Tech Stack
         </h2>
 
@@ -54,7 +96,7 @@ export default async function ProjectPage({
                   category.subtitle
                 }
               >
-                <h3 className="mb-3 text-lg font-semibold">
+                <h3 className="mb-3 text-lg font-semibold dark:text-zinc-200">
                   {
                     category.subtitle
                   }
@@ -68,7 +110,7 @@ export default async function ProjectPage({
                     ) => (
                       <span
                         key={`${tech}-${index}`}
-                        className="rounded-full bg-gray-100 px-4 py-2 hover"
+                        className="rounded-full bg-gray-100 px-4 py-2 text-sm text-gray-700 transition-colors dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 hover"
                       >
                         {tech}
                       </span>
@@ -88,7 +130,7 @@ export default async function ProjectPage({
           index
         ) => {
           switch (
-            section.type
+          section.type
           ) {
             case "bulletList":
               return (
@@ -104,12 +146,14 @@ export default async function ProjectPage({
               );
 
             case "contentBlock":
+              
               return (
                 <ContentBlockSection
                   key={index}
                   title={
                     section.title
                   }
+
                   items={
                     section.items
                   }
