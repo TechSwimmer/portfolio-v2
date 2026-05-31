@@ -35,10 +35,16 @@ export default function Hero() {
 
                     <div className="flex gap-4 mt-10">
 
-                        <PrimaryButton text="view projects" href="/#projects" />
+                        <PrimaryButton text="View projects" href="/#projects" />
 
 
                         <PrimaryButton text="Contact Me" href="/#contact" />
+                        <PrimaryButton
+                            text="Download CV"
+                            href="/Nikhil-next.pdf"
+                            external
+                            variant="primary"
+                        />
 
                     </div>
 
@@ -53,7 +59,7 @@ export default function Hero() {
                         ].map((tech) => (
                             <span
                                 key={tech}
-                                className="px-4 py-2 rounded-full border border-gray-400 bg-white text-smt transition dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 duration-300 hover:-translate-y-1 hover:shadow-md hover:border-zinc-500 hover:bg-zinc-50 dark:hover:border-zinc-600 dark:hover:border-zinc-600 dark:hover:shadow-zinc-950/40 dark:hover:text-zinc-900"
+                                className="px-4 py-2 rounded-full border border-gray-400 bg-white text-smt transition dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200 duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-zinc-300/40 hover:border-zinc-500 hover:bg-zinc-50 dark:hover:border-zinc-600 dark:hover:border-zinc-600 dark:hover:shadow-lg dark:hover:shadow-black/30 dark:hover:text-zinc-900"
                             >
                                 {tech}
                             </span>

@@ -112,11 +112,22 @@ px-3
 py-1.5
 text-sm
 text-gray-700
-transition-colors
+transition-all
+
 
 dark:border-zinc-700
 dark:bg-zinc-800
-dark:text-zinc-200"
+dark:text-zinc-200
+duration-300
+hover:-translate-y-1 
+hover:shadow-md 
+hover:border-zinc-500 
+hover:bg-zinc-50 
+dark:hover:border-zinc-600 
+dark:hover:border-zinc-600 
+dark:hover:shadow-zinc-950/40
+dark:hover:text-zinc-900
+"
                         >
                             {tech}
                         </span>

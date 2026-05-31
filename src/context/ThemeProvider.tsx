@@ -22,7 +22,7 @@ export function ThemeProvider({
 }) {
     const [theme, setTheme] = 
         useState<Theme>(
-            "light"
+            "dark"
     );
 
     const toggleTheme = 
