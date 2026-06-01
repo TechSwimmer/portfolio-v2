@@ -1,7 +1,7 @@
 
 import Projects from "@/components/sections/Projects";
 import {projects} from "@/data/projects"
-import Reveal from "@/components/animations/Reveal";
+
 
 
 
