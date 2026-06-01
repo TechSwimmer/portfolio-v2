@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import PrimaryButton from "@/components/ui/PrimaryButton";
+import AnimatedSection from "../animations/AnimatedSection";
 
 type TechStackCategory = {
     subtitle: string;
@@ -30,6 +31,7 @@ export default function ProjectCard({
     image,
 }: ProjectCardProps) {
     return (
+        <AnimatedSection>
         <div className="
 group
 flex
@@ -88,12 +90,14 @@ dark:text-zinc-100">
             </h3>
 
 
-
-            <p className="mb-6 text-gray-600 leading-relaxed text-[18px] dark:text-zinc-300">
-                {description}
-            </p>
+            
+                <p className="mb-6 text-gray-600 leading-relaxed text-[18px] dark:text-zinc-300">
+                    {description}
+                </p>
+            
 
             {/* Tech Stack */}
+            
             <div className="mb-6 flex flex-wrap gap-2">
                 {techStack
                     .flatMap(
@@ -102,6 +106,7 @@ dark:text-zinc-100">
                     )
                     .slice(0, 6)
                     .map((tech, index) => (
+
                         <span
                             key={`${tech}-${index}`}
                             className="rounded-full
@@ -129,10 +134,14 @@ dark:hover:shadow-zinc-950/40
 dark:hover:text-zinc-900
 "
                         >
-                            {tech}
+                                {tech}
+                            
                         </span>
+
                     ))}
+
             </div>
+            
 
             {/* Buttons */}
             <div className="mt-auto flex items-center justify-between gap-4 border-t border-gray-100 dark:border-zinc-800 pt-5">
@@ -159,5 +168,6 @@ dark:hover:text-zinc-900
             </div>
 
         </div>
+        </AnimatedSection>
     );
 }

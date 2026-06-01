@@ -25,7 +25,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Logo */}
         <a href="/" onClick={closeMobileMenu}>
-          <h1 className="bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-xl font-bold text-transparent dark:text-zinc-100">
+          <h1 className="bg-gradient-to-r font-display from-blue-500 to-purple-500 bg-clip-text text-xl font-bold text-transparent dark:text-zinc-100">
             Nikhil
           </h1>
         </a>
@@ -44,6 +44,7 @@ export default function Navbar() {
                       : undefined
                   }
                   className={`relative transition-colors duration-300
+    
     focus:outline-none
     focus:ring-2
     focus:ring-zinc-500
@@ -56,8 +57,8 @@ export default function Navbar() {
     after:transition-all
     after:duration-300
     ${isActive
-                      ? "text-zinc-950 after:w-full after:bg-zinc-950 dark:text-zinc-100 dark:after:bg-zinc-100"
-                      : "text-zinc-700 hover:text-zinc-950 after:w-0 after:bg-zinc-950 hover:after:w-full dark:text-zinc-200 dark:hover:text-zinc-100 dark:after:bg-zinc-100"
+                      ? "text-zinc-950 after:w-full after:bg-zinc-950 dark:text-zinc-100 dark:after:bg-zinc-100 font-inter font-semibold"
+                      : "text-zinc-700 hover:text-zinc-950 after:w-0 after:bg-zinc-950 hover:after:w-full dark:text-zinc-200 dark:hover:text-zinc-100 dark:after:bg-zinc-100 font-inter font-semibold"
                     }`}
                 >
                   {link.name}

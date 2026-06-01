@@ -3,16 +3,19 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ProjectCard from "@/components/cards/ProjectCard";
 import { projects } from "@/data/projects";
 
+
 export default function Projects() {
     return (
+        
         <section className="max-w-7xl mx-auto px-6 py-20 transition-colors duration-300" id="projects">
             <SectionHeading
                 eyebrow="Projects"
                 title="Selected Work"
             />
-
+            
             <div className="grid grid-cols-1 min-[900px]:grid-cols-2 xl-grid-cols-3 gap-6 mt-12">
                 {projects.map((project) => (
+                    
                     <ProjectCard
                         key={project.slug}
                         title={project.title}
@@ -24,8 +27,11 @@ export default function Projects() {
                         video={project.video}
                         image={project.image}
                     />
+                    
                 ))}
             </div>
-        </section> 
+            
+        </section>
+        
     )
 }

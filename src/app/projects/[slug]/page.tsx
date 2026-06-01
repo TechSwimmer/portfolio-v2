@@ -3,6 +3,7 @@ import { projects } from "@/data/projects";
 import BulletListSection from "@/components/project-sections/BulletListSection";
 import ContentBlockSection from "@/components/project-sections/ContentBlockSection";
 import MediaContentSection from "@/components/project-sections/MediaContentSection";
+import AnimatedSection from "@/components/animations/AnimatedSection";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -28,6 +29,7 @@ export default async function ProjectPage({
   }
 
   return (
+    <AnimatedSection>
     <section className="max-w-5xl mx-auto px-6 py-28">
       {/* Hero Section */}
       <div className="mb-20">
@@ -179,5 +181,6 @@ export default async function ProjectPage({
         }
       )}
     </section>
+    </AnimatedSection>
   );
 }

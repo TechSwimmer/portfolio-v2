@@ -1,11 +1,23 @@
 import type { Metadata } from 'next'
 import "./globals.css"
 import { ThemeProvider } from '@/context/ThemeProvider'
+import PageTransition from '@/components/animations/PageTransition'
 
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 
+import { Inter, Sora } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -73,19 +85,19 @@ export const metadata: Metadata = {
 };
 
 type RootLayoutProps = {
-  children:React.ReactNode;
+  children: React.ReactNode;
 };
 
 export default function RootLayout({
   children
-}:RootLayoutProps){
-  return(
+}: RootLayoutProps) {
+  return (
     <html lang="en" suppressHydrationWarning>
-      <body className="relative min-h-screen flex flex-col overflow-x-hidden">
-        
-  
-    <div
-      className="
+      <body className={`${inter.variable} ${sora.variable} font-sans relative min-h-screen flex flex-col overflow-x-hidden`}>
+
+
+        <div
+          className="
         fixed
         top-20
         left-1/2
@@ -101,14 +113,17 @@ export default function RootLayout({
         -z-10
         pointer-events-none
       "
-    />
-  
+        />
+
         <ThemeProvider>
-        <Navbar/>
-        <main className="flex-1">
-          { children }
-        </main>
-        <Footer/>
+          <Navbar />
+          <main className="flex-1">
+            <PageTransition>
+              {children}
+            </PageTransition>
+
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

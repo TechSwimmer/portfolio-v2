@@ -1,6 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
+
+
 
 const proofItems = [
   {
@@ -38,27 +41,17 @@ const proofItems = [
 ];
 
 export default function HeroProofPanel() {
+
+ const childVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }, // ✅ "easeOut" not "ease-out"
+  },
+};
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        x: 20,
-      }}
-      animate={{
-        opacity: 1,
-        x: 0,
-      }}
-      transition={{
-        delay: 0.2,
-        duration: 0.7,
-      }}
-      className="
-        relative
-        flex
-        flex-col
-        gap-5
-      "
-    >
+    <>
       {proofItems.map(
         (item) => (
           <div
@@ -73,7 +66,7 @@ export default function HeroProofPanel() {
               backdrop-blur-sm
               transition-all
               duration-300
-
+              mb-3
               hover:-translate-y-1
               hover:shadow-lg
 
@@ -81,43 +74,45 @@ export default function HeroProofPanel() {
               dark:bg-zinc-900/70
             "
           >
-            <h3
+            <motion.h3 variants={childVariants} 
               className="
                 text-xl
                 font-semibold
+                font-display
 
                 dark:text-zinc-100
               "
             >
               {item.title}
-            </h3>
+            </motion.h3>
 
-            <p
+            <motion.p variants={childVariants}
               className="
                 mt-2
                 font-medium
                 text-zinc-700
-
+                font-inter
                 dark:text-zinc-300
               "
             >
               {item.subtitle}
-            </p>
+            </motion.p>
 
-            <p
+            <motion.p variants={childVariants}
               className="
                 mt-3
                 text-sm
                 text-zinc-500
+                font-inter
 
                 dark:text-zinc-400
               "
             >
               {item.description}
-            </p>
+            </motion.p>
           </div>
         )
       )}
-    </motion.div>
+    </>
   );
 }

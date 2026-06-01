@@ -2,6 +2,7 @@
 import { useState } from "react"
 import SectionHeading from "../ui/SectionHeading"
 import PrimaryButton from "../ui/PrimaryButton"
+import AnimatedSection from "../animations/AnimatedSection"
 
 type FormData = {
     name: string;
@@ -137,7 +138,10 @@ export default function Contact() {
                 title="let's work together"
                 description="Have a projet idea or opportunity? Feel free to reach out."
             />
-
+            <AnimatedSection
+                stagger={0.25}
+                delay={0.25}
+            >
             <form
                 onSubmit={handleSubmit}
                 className="mt-10 space-y-6"
@@ -189,6 +193,7 @@ export default function Contact() {
                     disabled={loading}
                 />
             </form>
+            </AnimatedSection>
         </section>
     )
 }

@@ -25,10 +25,13 @@ body {
     var(--foreground);
 
   --font-sans:
-    var(--font-geist-sans);
+    var(--font-inter);
 
   --font-mono:
     var(--font-geist-mono);
+
+  --font-display: 
+    var(--font-sora)
 }
 
 body {
@@ -39,7 +42,5 @@ body {
     var(--foreground);
 
   font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+    "Inter", "Sora", Arial, sans-serif;
 }

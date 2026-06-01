@@ -90,7 +90,7 @@ export const osscontributions: OSSContributions[] = [
       id:6,
       projectName: "devtasks",
       title: "improve dashboard mobile responsiveness",
-      description: "Enhanced dashboard mobile responsiveness by fixing scrolling issues, improving responsive layouts, and optimizing header behavior across screen sizes.",
+      description: "Improved dashboard mobile responsiveness by fixing scrolling, layouts, and header behavior.",
       type: "ui",
       techStack: ["React","Tailwind CSS","Responsive Design"],
       status: "merged",

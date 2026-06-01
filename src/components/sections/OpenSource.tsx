@@ -1,7 +1,8 @@
 import SectionHeading from "@/components/ui/SectionHeading";
 import { skillCategories } from "@/data/skills";
 import { osscontributions } from "@/data/openSource";
-import  OpenSourceCard  from "../cards/OpenSourceCard";
+import OpenSourceCard from "../cards/OpenSourceCard";
+import AnimatedSection from "../animations/AnimatedSection";
 
 export default function OpenSource() {
   return (
@@ -10,10 +11,11 @@ export default function OpenSource() {
         eyebrow="Open Source Contibutions"
         title="Real-world engineering contributions"
       />
-
+      
       <div className="grid min-[900px]:grid-cols-2 xl:grid-cols-3 gap-6 mt-12 auto-rows-fr">
         {osscontributions.map((item) => (
-           <OpenSourceCard
+          
+            <OpenSourceCard
               key={item.id}
               id={item.id}
               projectName={item.projectName}
@@ -26,10 +28,12 @@ export default function OpenSource() {
               filesChanged={item.filesChanged}
               highlights={item.highlights}
               issue={item.issue}
-        />
+            />
+          
         ))}
-       
+
       </div>
+      
     </section>
   );
 }

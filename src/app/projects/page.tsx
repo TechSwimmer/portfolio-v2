@@ -1,28 +1,34 @@
+
 import Projects from "@/components/sections/Projects";
 import {projects} from "@/data/projects"
+import Reveal from "@/components/animations/Reveal";
+
+
 
 import BulletListSection from "@/components/project-sections/BulletListSection";
 import MediaContentSection from "@/components/project-sections/MediaContentSection";
 import ContentBlockSection from "@/components/project-sections/ContentBlockSection";
 
 type ProjectPageProps  = {
-  params:Promise<{
+  params:{
     slug:string;
-  }>;
+  };
 };
 
-export default async function ProjectsPage({params}:ProjectPageProps) {
+export default function ProjectsPage({params}:ProjectPageProps) {
 
-  const { slug } = await params;
+  const { slug } =  params;
   const  project = projects.find(
     (p) => p.slug === slug
   )
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-20">
-      <h1 className="text-4xl font-bold">
+    
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        
         <Projects />
-      </h1>
-    </section>
+        
+      </section>
+    
   );
 }

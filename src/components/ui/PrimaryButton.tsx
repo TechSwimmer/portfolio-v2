@@ -1,4 +1,23 @@
 import Link from "next/link";
+import { motion } from "framer-motion"
+
+const MotionLink = motion.create(Link);
+
+const motionProps = {
+  whileHover: {
+    y: -2,
+    scale: 1.02,
+  },
+
+  whileTap: {
+    scale: 0.97,
+  },
+
+  transition: {
+    duration: 0.2,
+    ease: [0.22, 1, 0.36, 1] as const
+  },
+};
 
 
 type PrimaryButtonProps = {
@@ -61,6 +80,7 @@ export default function PrimaryButton({
   px-5
   py-3
   font-medium
+  font-display
   transition-all
   duration-300
   disabled:opacity-50
@@ -74,37 +94,46 @@ export default function PrimaryButton({
   // External links
   if (href && external) {
     return (
-      <a
+      
+      <motion.a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         className={sharedClasses}
+        {...motionProps}
       >
         {text}
-      </a>
+      </motion.a>
+      
     );
   }
 
   // Internal links
   if (href) {
     return (
-      <Link
+      
+      <MotionLink
         href={href}
         className={sharedClasses}
+        {...motionProps}
       >
         {text}
-      </Link>
+      </MotionLink>
+      
     );
   }
 
   // Form buttons
   return (
-    <button
+    
+    <motion.button
       type={type}
       disabled={disabled}
       className={sharedClasses}
+      {...motionProps}
     >
       {text}
-    </button>
+    </motion.button>
+    
   );
 }
