@@ -68,7 +68,7 @@ export default function Footer() {
         
 
         {/* Right Section */}
-        <div className="flex items-center gap-5">
+        <div className="flex justify-between gap-5">
           <a
             href="https://github.com/TechSwimmer"
             target="_blank"
