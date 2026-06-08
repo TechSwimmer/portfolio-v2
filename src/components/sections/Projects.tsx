@@ -1,4 +1,4 @@
-"use client";
+
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProjectCard from "@/components/cards/ProjectCard";
 import { projects } from "@/data/projects";
@@ -26,6 +26,8 @@ export default function Projects() {
                         github={project.github}
                         video={project.video}
                         image={project.image}
+                        poster={project.poster}
+                        captions={project.captions}
                     />
                     
                 ))}

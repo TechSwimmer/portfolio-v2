@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00.000 --> 00:03.000
+TaskNest, a full-stack task management app.
+
+00:03.000 --> 00:06.000
+Create tasks quickly with a clean and simple interface.
+
+00:06.000 --> 00:09.000
+Organize work with Today, Tomorrow, and All Tasks views.
+
+00:09.000 --> 00:12.000
+Track progress with secure JWT login and task persistence.
+
+00:12.000 --> 00:15.000
+Filter, update, and manage tasks with responsive controls.
+
+00:15.000 --> 00:18.000
+Built with Node.js, Express, MongoDB, and vanilla JavaScript.

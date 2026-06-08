@@ -3,12 +3,6 @@ import Projects from "@/components/sections/Projects";
 import {projects} from "@/data/projects"
 
 
-
-
-import BulletListSection from "@/components/project-sections/BulletListSection";
-import MediaContentSection from "@/components/project-sections/MediaContentSection";
-import ContentBlockSection from "@/components/project-sections/ContentBlockSection";
-
 type ProjectPageProps  = {
   params:{
     slug:string;

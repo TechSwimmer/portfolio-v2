@@ -23,11 +23,8 @@ export default function Footer() {
             Full Stack Developer focused on building scalable web
             applications and polished user experiences.
           </p>
-        </div>
-
-        {/* Center Navigation */}
-        <div>
-          <ul className="flex flex-wrap items-center justify-center gap-6 text-sm">
+          <div>
+          <ul className="flex flex-wrap items-center justify-between gap-6 text-sm mt-10">
             <li>
               <Link
                 href="/about"
@@ -65,6 +62,10 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+        </div>
+
+        {/* Center Navigation */}
+        
 
         {/* Right Section */}
         <div className="flex items-center gap-5">
@@ -109,7 +110,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Strip */}
-      <div className="border-t border-zinc-200 py-4 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-500">
+      <div className="border-t border-zinc-200 py-4 text-center text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-300">
         © {currentYear} Nikhil Pillai. Built with Next.js & Tailwind CSS.
       </div>
     </footer>

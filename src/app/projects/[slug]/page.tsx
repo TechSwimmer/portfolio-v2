@@ -3,7 +3,6 @@ import { projects } from "@/data/projects";
 import BulletListSection from "@/components/project-sections/BulletListSection";
 import ContentBlockSection from "@/components/project-sections/ContentBlockSection";
 import MediaContentSection from "@/components/project-sections/MediaContentSection";
-import AnimatedSection from "@/components/animations/AnimatedSection";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -29,7 +28,7 @@ export default async function ProjectPage({
   }
 
   return (
-    <AnimatedSection>
+    
     <section className="max-w-5xl mx-auto px-6 py-28">
       {/* Hero Section */}
       <div className="mb-20">
@@ -54,19 +53,20 @@ export default async function ProjectPage({
 
       dark:border-zinc-800
       dark:bg-zinc-900/70
-    "
+        "
         >
           {project.video ? (
             <video
               src={project.video}
               poster={project.poster}
-              preload="metadata"
+              preload="none"
               autoPlay
               muted
               loop
               playsInline
               controls
               className="
+          h-[450px]
           w-full
           object-cover
         "
@@ -181,6 +181,6 @@ export default async function ProjectPage({
         }
       )}
     </section>
-    </AnimatedSection>
+    
   );
 }

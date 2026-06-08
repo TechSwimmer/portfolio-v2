@@ -28,7 +28,7 @@ export default function ContentBlockSection({ title , items, image}:ContentBlock
                 {items.map((item) => (
                     <div 
                         key={item.subtitle}
-                        className="rounded-3xl border border-gray-300 bg-white p-8 shadow-sm transition-colors dark:border-zinc-800 dark:bg-zinc-900/70"
+                        className="rounded-3xl border border-gray-300 bg-white p-8 shadow-sm transition-[colors,transform] duration-300 hover:-translate-y-1 dark:border-zinc-800 dark:bg-zinc-900/70"
                     >
                         <h3 className="mb-3 text-xl font-semibold dark:text-zinc-100">
                             {item.subtitle}

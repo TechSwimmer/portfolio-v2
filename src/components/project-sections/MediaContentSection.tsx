@@ -13,7 +13,7 @@ type MediaContentSectionProps = {
 export default function MediaContentSection({ title, items }: MediaContentSectionProps) {
 
     return (
-        <section className="mt-20">
+        <section className="mt-20 transition-transform duration-300 hover:-translate-y-1">
             <h2 className="mb-8 text-3xl font-bold dark:text-zinc-100">
                 {title}
             </h2>
@@ -22,7 +22,7 @@ export default function MediaContentSection({ title, items }: MediaContentSectio
                 {items.map((item, index) => (
                     <div
                         key={index}
-                        className="rounded-3xl border border-gray-200 p-8 shadow-sm transition-colors dark:border-zinc-800 dark:border-zinc-800 dark:bg-zinc-900/70"
+                        className="rounded-3xl border border-gray-200 p-8 shadow-sm transition-colors dark:border-zinc-800 dark:border-zinc-800 dark:bg-zinc-900/70 transition-transform duration-300 hover:-translate-y-1"
                     >
 
                         {item.subtitle && (

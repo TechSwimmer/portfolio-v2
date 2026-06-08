@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import "./globals.css"
-import { ThemeProvider } from '@/context/ThemeProvider'
-import PageTransition from '@/components/animations/PageTransition'
+import  ThemeProvider  from '@/context/ThemeProvider'
 
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
@@ -106,7 +105,7 @@ export default function RootLayout({
         w-[400px]
         rounded-full
         bg-zinc-400/10
-        blur-[120px]
+        blur-[80px]
 
         dark:bg-zinc-500/10
 
@@ -118,10 +117,10 @@ export default function RootLayout({
         <ThemeProvider>
           <Navbar />
           <main className="flex-1">
-            <PageTransition>
+            
               {children}
-            </PageTransition>
-
+            
+            
           </main>
           <Footer />
         </ThemeProvider>

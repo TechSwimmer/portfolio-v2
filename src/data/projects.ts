@@ -9,7 +9,7 @@ type BulletListSections = {
 type ContentBlockSection = {
     type: "contentBlock";
     title: string;
-    image?:string;
+    image?: string;
     items: {
         subtitle: string;
         description: string;
@@ -47,7 +47,8 @@ export interface Project {
     video?: string;
     image?: string;
     sections?: Section[];
-    poster?:string
+    poster?: string;
+    captions?: string;
 
 };
 
@@ -56,7 +57,8 @@ export const projects: Project[] = [
         title: "ResumeBaker",
         slug: "resumebaker",
         description: "Built a production-ready full-stack resume builder with real-time preview synchronization, dynamic layouts, JWT authentication, AI-powered resume import, and consistent PDF export. Implemented REST APIs for resume persistence and seamless guest/registered user workflows.",
-        poster: "/images/resumebaker/builder-shot.png",
+        poster: "/images/resumebaker/builder-shot.webp",
+        captions: "/captions/resumebaker-demo.vtt",
         techStack: [
             {
                 subtitle: "Frontend:",
@@ -183,6 +185,237 @@ export const projects: Project[] = [
             }
         ],
     },
+    {
+
+
+        title: "JobLens-AI",
+        slug: "joblens-ai",
+
+        description:
+            "Built an AI-powered Chrome extension that analyzes LinkedIn job descriptions against uploaded resumes to simulate ATS-style skill matching. Implemented resume parsing, PDF text extraction, real-time LinkedIn DOM scraping, and skill-gap analysis through a draggable floating UI injected directly into job pages.",
+
+        poster: "/images/joblens/joblens-shot.webp",
+
+        captions: "/captions/joblens-demo.vtt",
+
+        techStack: [
+            {
+                subtitle: "Frontend:",
+                technologies: [
+                    "React",
+                    "TypeScript",
+                    "Vite",
+                    "Tailwind CSS"
+                ]
+            },
+
+            {
+                subtitle: "Chrome Extension:",
+                technologies: [
+                    "Chrome Extension APIs",
+                    "Content Scripts",
+                    "CRXJS",
+                    "Manifest V3"
+                ]
+            },
+
+            {
+                subtitle: "Resume Processing:",
+                technologies: [
+                    "pdfjs-dist",
+                    "Mammoth",
+                    "Text Parsing"
+                ]
+            },
+
+            {
+                subtitle: "ATS Logic:",
+                technologies: [
+                    "Skill Extraction",
+                    "Keyword Matching",
+                    "Resume-to-Job Comparison"
+                ]
+            }
+        ],
+
+        github:
+            "https://github.com/TechSwimmer/joblens-ai",
+
+        live: "",
+
+        video:
+            "/videos/joblens-demo.mp4",
+
+        sections: [
+            {
+                type: "contentBlock",
+
+                title: "Project highlights",
+
+                image:
+                    "/images/joblens/joblens-shot.png",
+
+                items: [
+                    {
+                        subtitle:
+                            "LinkedIn Job Analysis",
+
+                        description:
+                            "Injected a floating ATS analysis panel directly into LinkedIn job pages using Chrome content scripts."
+                    },
+
+                    {
+                        subtitle:
+                            "Resume Parsing Pipeline",
+
+                        description:
+                            "Implemented PDF and DOCX resume parsing with text extraction for downstream ATS analysis."
+                    },
+
+                    {
+                        subtitle:
+                            "ATS Skill Matching",
+
+                        description:
+                            "Built a keyword-based matching system that compares resume skills against detected job requirements."
+                    },
+
+                    {
+                        subtitle:
+                            "Real-Time Job Scraping",
+
+                        description:
+                            "Extracted job title, company, location, and description dynamically from LinkedIn DOM elements."
+                    },
+
+                    {
+                        subtitle:
+                            "Draggable Floating UI",
+
+                        description:
+                            "Built a movable floating interface that updates job information in real time while browsing LinkedIn."
+                    },
+
+                    {
+                        subtitle:
+                            "Skill Gap Analysis",
+
+                        description:
+                            "Displayed ATS match score, matching skills, missing skills, and extracted job keywords for better resume targeting."
+                    }
+                ]
+            },
+
+            {
+                type: "mediaContent",
+
+                title:
+                    "TECHNICAL IMPLEMENTATION",
+
+                items: [
+                    {
+                        subtitle:
+                            "Chrome Extension Architecture:",
+
+                        description:
+                            "Built the application using Manifest V3 with CRXJS and content scripts to inject React UI directly into LinkedIn job pages.",
+
+                        bullets: [
+                            "Manifest V3 architecture with scoped permissions",
+                            "React-based floating panel mounted using content scripts",
+                            "LinkedIn-specific URL matching for targeted execution"
+                        ]
+                    },
+
+                    {
+                        subtitle:
+                            "Resume Processing Pipeline:",
+
+                        description:
+                            "Implemented local resume parsing to extract text content before ATS analysis.",
+
+                        bullets: [
+                            "PDF parsing using pdfjs worker configuration",
+                            "DOCX support through Mammoth (still in development)",
+                            "Resume text persisted using Chrome storage APIs"
+                        ]
+                    },
+
+                    {
+                        subtitle:
+                            "ATS Matching System:",
+
+                        description:
+                            "Built a lightweight ATS simulation system for comparing resume skills with job requirements.",
+
+                        bullets: [
+                            "Regex-based skill extraction",
+                            "Case-insensitive keyword comparison",
+                            "Percentage-based ATS scoring"
+                        ]
+                    },
+
+                    {
+                        subtitle:
+                            "LinkedIn DOM Scraping:",
+
+                        description:
+                            "Designed resilient DOM extraction logic using multiple fallback selectors to improve reliability across LinkedIn UI changes.",
+
+                        bullets: [
+                            "Dynamic selector fallback system",
+                            "Periodic DOM polling for job changes",
+                            "Real-time updates while browsing jobs"
+                        ]
+                    }
+                ]
+            },
+
+            {
+                type: "bulletList",
+
+                title:
+                    "Engineering Challenges Solved",
+
+                items: [
+                    "Solved PDF worker failures inside Chrome extensions by explicitly configuring pdfjs worker paths using Vite asset URLs.",
+
+                    "Handled dynamic LinkedIn DOM updates by implementing periodic scraping and fallback selectors to avoid broken extraction.",
+
+                    "Designed a floating draggable UI that stays responsive while continuously monitoring job page changes.",
+
+                    "Built a lightweight ATS scoring system capable of identifying matching and missing skills without relying on external APIs."
+                ]
+            },
+
+            {
+                type: "contentBlock",
+
+                title:
+                    "Architecture Decisions",
+
+                items: [
+                    {
+                        subtitle:
+                            "Local Resume Processing",
+
+                        description:
+                            "Processed resumes locally using pdfjs and Mammoth instead of external services to keep the extension lightweight and privacy-friendly."
+                    },
+
+                    {
+                        subtitle:
+                            "Scoped LinkedIn Injection",
+
+                        description:
+                            "Restricted content script execution to LinkedIn jobs pages for better performance, reduced permissions, and improved security."
+                    }
+                ]
+            }
+        ],
+    },
+
+
 
 
 
@@ -194,7 +427,8 @@ export const projects: Project[] = [
         title: "TaskNest",
         slug: "tasknest",
         description: "Built a full-stack task management SPA with secure JWT authentication, CRUD functionality, calendar-based task filtering, and MongoDB persistence. Implemented RESTful APIs, token-based access control, and a responsive productivity-focused user experience.",
-        poster:"/images/tasknest/tasknest.png",
+        poster: "/images/tasknest/tasknest.webp",
+        captions: "/captions/tasknest-demo.vtt",
         techStack: [
             {
                 subtitle: "Frontend:",
@@ -350,7 +584,7 @@ export const projects: Project[] = [
         ],
         github: "https://github.com/TechSwimmer/Affina",
         live: "https://affina.netlify.app",
-        image: "/videos/affina.png",
+        image: "/videos/affina.webp",
         sections: [
             {
                 type: "contentBlock",
@@ -490,6 +724,6 @@ export const projects: Project[] = [
         ],
         github: "https://github.com/TechSwimmer/portfolio-v2",
         live: "https://affina.netlify.app",
-        image: "/images/portfolio/portfolio-shot.png",
+        image: "/images/portfolio/portfolio-shot.webp",
     }
 ]

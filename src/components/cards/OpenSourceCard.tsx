@@ -1,4 +1,4 @@
-import AnimatedSection from "../animations/AnimatedSection";
+
 
 type OpenSourceCardProps = {
   id: number;
@@ -42,7 +42,7 @@ export default function OpenSourceCard({
   highlights,
 }: OpenSourceCardProps) {
   return (
-    <AnimatedSection>
+    
       <div
         className="
         group
@@ -55,7 +55,7 @@ export default function OpenSourceCard({
         bg-white
         p-8
         shadow-sm
-        transition-all
+        
         duration-300
 
         hover:-translate-y-2
@@ -307,6 +307,6 @@ export default function OpenSourceCard({
         </div>
 
       </div>
-    </AnimatedSection>
+    
   );
 }

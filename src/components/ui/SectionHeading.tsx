@@ -1,6 +1,4 @@
 
-import AnimatedSection from "@/components/animations/AnimatedSection";
-
 
 type SectionHeadingProps = {
     eyebrow: string;
@@ -10,7 +8,7 @@ type SectionHeadingProps = {
 
 export default function SectionHeading({ eyebrow, title,description}: SectionHeadingProps) {
     return(
-        <AnimatedSection>
+     
         <div className="mb-10">
             <p className="text-md uppercase tracking-[0.2em] text-gray-500 mb-3 transition-colors duration-300 dark:text-zinc-400">
                 {eyebrow}
@@ -24,7 +22,7 @@ export default function SectionHeading({ eyebrow, title,description}: SectionHea
                 </p>
             )}
         </div>
-        </AnimatedSection>
+        
         
     )
 }

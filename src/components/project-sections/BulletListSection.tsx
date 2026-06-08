@@ -15,7 +15,7 @@ export default function BulletListSection({title,items}: BulletListSectionProps)
                 {items.map((item,index) => (
                     <li
                         key={`${item}-${index}`}
-                        className="text-lg leading-relaxed text-gray-600 dark:text-zinc-300"
+                        className="text-lg leading-relaxed text-gray-600 dark:text-zinc-300 transition-transform duration-300 hover:-translate-y-1"
                     >
                         • {item}
                     </li>

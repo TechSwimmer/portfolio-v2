@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { send } from "process";
+
 import { Resend } from "resend";
 
 const resend = new Resend(

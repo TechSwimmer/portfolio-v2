@@ -1,8 +1,8 @@
 import SectionHeading from "@/components/ui/SectionHeading";
-import { skillCategories } from "@/data/skills";
+
 import { osscontributions } from "@/data/openSource";
 import OpenSourceCard from "../cards/OpenSourceCard";
-import AnimatedSection from "../animations/AnimatedSection";
+
 
 export default function OpenSource() {
   return (
