@@ -20,20 +20,19 @@ export default function About() {
  
         <div className="space-y-6 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
           <p>
-            I enjoy building products that solve real problems — 
-            from full-stack applications to features that improve 
-            usability and developer experience. Most of my work 
-            revolves around React, Node.js, TypeScript, and modern 
-            web technologies, with a strong focus on practical 
-            implementation rather than tutorials or toy projects.
+            I’m a career-switching developer who learns best by building. 
+            I’ve spent the last few years turning ideas into full-stack apps,
+            AI experiments, and Chrome extension projects, using each one to 
+            get better at solving problems end to end. I care most about building
+            software that feels practical, clear, and enjoyable to use.
           </p>
 
           <p>
-            Beyond personal projects, I actively contribute to open 
-            source by shipping features, fixing issues, and improving 
-            real-world products. I enjoy understanding how systems work 
-            end-to-end and building software that feels intuitive, reliable, 
-            and useful.
+            Beyond personal projects, I’ve contributed to open source by 
+            shipping features, fixing bugs, and polishing small but important 
+            details in other people’s codebases. I like the process of dropping 
+            into an unfamiliar system, understanding how it fits together, and 
+            making it better piece by piece.
           </p>
         </div>
         
