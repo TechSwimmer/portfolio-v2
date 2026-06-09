@@ -7,7 +7,7 @@ export default function BulletListSection({title,items}: BulletListSectionProps)
 
     return (
         <section className="mt-20">
-            <h2 className="mb-8 text-3xl font-bold dark:text-zinc-100">
+            <h2 className="mb-8 text-3xl font-bold font-display dark:text-zinc-100">
                 {title}
             </h2>
 

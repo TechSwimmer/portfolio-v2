@@ -116,6 +116,7 @@ dark:bg-zinc-950">
 
             <h3 className="text-3xl
 font-semibold
+font-display
 tracking-tight
 dark:text-zinc-100">
                 {title}

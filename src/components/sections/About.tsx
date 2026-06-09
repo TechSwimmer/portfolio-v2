@@ -11,14 +11,14 @@ export default function About() {
     px-6
     py-28" id="about">
       
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 h-[400px] w-[400px] rounded-full bg-zinc-400/10 blur-[120px] dark:bg-zinc-500/10 -z-10"/>
+      
       <div className="max-w-4xl">
         <SectionHeading
           eyebrow="About"
           title="Building products with real-world impact"
         />
  
-        <div className="space-y-6 text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+        <div className="space-y-6 text-lg leading-8 text-zinc-700 dark:text-zinc-300 font-sans">
           <p>
             I’m a career-switching developer who learns best by building. 
             I’ve spent the last few years turning ideas into full-stack apps,

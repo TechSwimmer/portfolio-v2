@@ -77,7 +77,7 @@ export default function OpenSourceCard({
               uppercase
               tracking-[0.2em]
               text-zinc-500
-
+              font-display
               dark:text-zinc-400
             "
             >
@@ -90,7 +90,7 @@ export default function OpenSourceCard({
               text-2xl
               font-semibold
               tracking-tight
-
+              font-display
               dark:text-zinc-100
             "
             >
@@ -105,7 +105,7 @@ export default function OpenSourceCard({
             py-1.5
             text-sm
             font-medium
-
+            font-display
             ${status === "merged"
                 ? `
                 bg-emerald-100
@@ -135,7 +135,7 @@ export default function OpenSourceCard({
             className="
           text-gray-600
           leading-relaxed
-
+          
           dark:text-zinc-300
         "
           >
@@ -156,7 +156,7 @@ export default function OpenSourceCard({
               px-3
               py-1
               text-sm
-
+              
               dark:border-zinc-700
               dark:bg-zinc-800
               dark:text-zinc-200
@@ -176,7 +176,7 @@ export default function OpenSourceCard({
             py-1
             text-sm
             capitalize
-
+            
             dark:border-zinc-700
             dark:bg-zinc-800
             dark:text-zinc-200
@@ -199,7 +199,7 @@ export default function OpenSourceCard({
                 font-semibold
                 uppercase
                 tracking-wide
-
+                font-display
                 dark:text-zinc-200
               "
                 >

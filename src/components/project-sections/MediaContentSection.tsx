@@ -14,7 +14,7 @@ export default function MediaContentSection({ title, items }: MediaContentSectio
 
     return (
         <section className="mt-20 transition-transform duration-300 hover:-translate-y-1">
-            <h2 className="mb-8 text-3xl font-bold dark:text-zinc-100">
+            <h2 className="mb-8 text-3xl font-bold font-display dark:text-zinc-100">
                 {title}
             </h2>
 
@@ -26,7 +26,7 @@ export default function MediaContentSection({ title, items }: MediaContentSectio
                     >
 
                         {item.subtitle && (
-                            <h3 className="mb-4 text-2xl font-semibold dark:text-zinc-100">
+                            <h3 className="mb-4 text-2xl font-semibold font-display dark:text-zinc-100">
                                 {item.subtitle}
                             </h3>
                         )}

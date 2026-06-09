@@ -33,19 +33,19 @@ export default function HeroProofPanel() {
             group
             relative
             mb-3
-            block
+            block 
             rounded-[2rem]
             border
             border-zinc-200
             bg-white/70
             p-6
             shadow-sm
-            backdrop-blur-sm
-            transition-all
+            
+            transition-[transform,border-color]
             duration-300
             hover:-translate-y-1
             hover:border-zinc-400
-            hover:shadow-md
+            
             focus:outline-none
             focus:ring-2
             focus:ring-zinc-400

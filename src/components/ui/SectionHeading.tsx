@@ -13,7 +13,7 @@ export default function SectionHeading({ eyebrow, title,description}: SectionHea
             <p className="text-md uppercase tracking-[0.2em] text-gray-500 mb-3 transition-colors duration-300 dark:text-zinc-400">
                 {eyebrow}
             </p>
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight transition-colors duration-300 dark:text-zinc-100">
+            <h2 className="text-3xl md:text-5xl font-bold font-display leading-tight transition-colors duration-300 dark:text-zinc-100">
                 {title}
             </h2>
             {description && (

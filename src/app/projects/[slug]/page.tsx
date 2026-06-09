@@ -32,7 +32,7 @@ export default async function ProjectPage({
     <section className="max-w-5xl mx-auto px-6 py-28">
       {/* Hero Section */}
       <div className="mb-20">
-        <h1 className="mb-6 text-5xl font-bold dark:text-zinc-100">
+        <h1 className="mb-6 text-5xl font-bold font-display dark:text-zinc-100">
           {project.title}
         </h1>
 
@@ -49,7 +49,7 @@ export default async function ProjectPage({
       rounded-[2rem]
       border
       border-zinc-200
-      shadow-sm
+      
 
       dark:border-zinc-800
       dark:bg-zinc-900/70
@@ -86,7 +86,7 @@ export default async function ProjectPage({
       )}
       {/* Tech Stack */}
       <div className="mb-20">
-        <h2 className="mb-8 text-3xl font-bold dark:text-zinc-100">
+        <h2 className="mb-8 text-3xl font-bold font-display dark:text-zinc-100">
           Tech Stack
         </h2>
 
@@ -98,7 +98,7 @@ export default async function ProjectPage({
                   category.subtitle
                 }
               >
-                <h3 className="mb-3 text-lg font-semibold dark:text-zinc-200">
+                <h3 className="mb-3 text-lg font-semibold font-display dark:text-zinc-200">
                   {
                     category.subtitle
                   }
@@ -112,7 +112,7 @@ export default async function ProjectPage({
                     ) => (
                       <span
                         key={`${tech}-${index}`}
-                        className="rounded-full bg-gray-100 px-4 py-2 text-sm text-gray-700 transition-all dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 duration-700 hover:-translate-y-1 hover:shadow-md hover:border-zinc-500 hover:bg-zinc-50 dark:hover:border-zinc-600 dark:hover:border-zinc-600 dark:hover:shadow-zinc-950/40 dark:hover:text-zinc-900"
+                        className="rounded-full bg-gray-100 px-4 py-2 text-sm text-gray-700 transition-all dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 duration-700 hover:-translate-y-1 hover:border-zinc-500 hover:bg-zinc-50 dark:hover:border-zinc-600 dark:hover:border-zinc-600 dark:hover:text-zinc-900"
                       >
                         {tech}
                       </span>

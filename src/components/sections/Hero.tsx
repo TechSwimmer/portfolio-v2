@@ -67,6 +67,7 @@ export default function Hero() {
                             "TypeScript",
                             "Tailwind CSS",
                             "MongoDB",
+                            "Chrome Extensions",
                         ].map((tech) => (
                             <span
                                 key={tech}

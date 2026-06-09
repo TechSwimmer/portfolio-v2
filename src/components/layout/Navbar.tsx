@@ -57,8 +57,8 @@ export default function Navbar() {
     after:transition-[width]
     after:duration-300
     ${isActive
-                      ? "text-zinc-950 after:w-full after:bg-zinc-950 dark:text-zinc-100 dark:after:bg-zinc-100 font-inter font-semibold"
-                      : "text-zinc-700 hover:text-zinc-950 after:w-0 after:bg-zinc-950 hover:after:w-full dark:text-zinc-200 dark:hover:text-zinc-100 dark:after:bg-zinc-100 font-inter font-semibold"
+                      ? "text-zinc-950 after:w-full after:bg-zinc-950 dark:text-zinc-100 dark:after:bg-zinc-100 font-semibold"
+                      : "text-zinc-700 hover:text-zinc-950 after:w-0 after:bg-zinc-950 hover:after:w-full dark:text-zinc-200 dark:hover:text-zinc-100 dark:after:bg-zinc-100 font-semibold"
                     }`}
                 >
                   {link.name}

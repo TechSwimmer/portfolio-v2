@@ -13,7 +13,7 @@ export default function Projects() {
                 title="Selected Work"
             />
             
-            <div className="grid grid-cols-1 min-[900px]:grid-cols-2 xl-grid-cols-3 gap-6 mt-12">
+            <div className="grid grid-cols-1 min-[900px]:grid-cols-2 xl:grid-cols-3 gap-6 mt-12">
                 {projects.map((project) => (
                     
                     <ProjectCard

@@ -11,7 +11,7 @@ export default function ContentBlockSection({ title , items, image}:ContentBlock
 
     return (
         <section className="mt-20">
-            <h2 className="mb-8 text-3xl font-bold dark:text-zinc-100">
+            <h2 className="mb-8 text-3xl font-bold font-display dark:text-zinc-100">
                 {title}
             </h2>
             {image && (
@@ -30,7 +30,7 @@ export default function ContentBlockSection({ title , items, image}:ContentBlock
                         key={item.subtitle}
                         className="rounded-3xl border border-gray-300 bg-white p-8 shadow-sm transition-[colors,transform] duration-300 hover:-translate-y-1 dark:border-zinc-800 dark:bg-zinc-900/70"
                     >
-                        <h3 className="mb-3 text-xl font-semibold dark:text-zinc-100">
+                        <h3 className="mb-3 text-xl font-display font-semibold dark:text-zinc-100">
                             {item.subtitle}
                         </h3>
                         

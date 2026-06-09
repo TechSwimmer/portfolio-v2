@@ -15,7 +15,7 @@ export default function Footer() {
         
         {/* Left Section */}
         <div className="space-y-2">
-          <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+          <h2 className="text-xl font-bold font-diisplay text-zinc-900 dark:text-zinc-100">
             Nikhil Pillai
           </h2>
 
